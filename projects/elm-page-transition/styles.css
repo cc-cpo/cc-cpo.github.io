@@ -1,0 +1,46 @@
+body {
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  width: 378px;
+  height: 667px;
+}
+
+.page-fadeover {
+  top: 667px;
+  animation-name: yAxis;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.page-hidelast {
+  animation-name: hideLast;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes yAxis {
+  100% {
+    animation-timing-function: ease-in;
+    transform: translateY(-667px);
+  }
+}
+
+@keyframes hideLast {
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .2;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
