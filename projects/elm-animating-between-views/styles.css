@@ -1,0 +1,53 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  /* let the browser know we plan to animate
+     each view in and out */
+  will-change: transform;
+}
+
+.view {
+  transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.account-view {
+  transform: translateX(100%);
+}
+
+.view-change .dashboard-view {
+  transform: translateX(-100%);
+}
+
+.view-change .account-view {
+  animation-name: fade-from-right;
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-from-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
