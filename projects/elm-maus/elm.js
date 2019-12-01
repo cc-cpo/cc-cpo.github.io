@@ -5215,7 +5215,7 @@ var $author$project$Main$init = function (_v0) {
 	var initConfettiModel = _v1.a;
 	var initConfettiCmd = _v1.b;
 	return _Utils_Tuple2(
-		{confettiModel: initConfettiModel, expand: 0, hideConfetti: false, showHeart: false},
+		{confettiModel: initConfettiModel, expand: 0, hideConfetti: false, showHeart: false, showTextLove: false},
 		$elm$core$Platform$Cmd$batch(
 			_List_fromArray(
 				[
@@ -6110,7 +6110,7 @@ var $author$project$Main$update = F2(
 				return _Utils_Tuple2(
 					_Utils_update(
 						model,
-						{hideConfetti: true, showHeart: true}),
+						{hideConfetti: true, showHeart: true, showTextLove: true}),
 					$elm$core$Platform$Cmd$none);
 		}
 	});
@@ -6231,6 +6231,29 @@ var $author$project$Main$photoFrame = A2(
 					_List_Nil)
 				]))
 		]));
+var $author$project$Main$textLove = function (fadeIn) {
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'position', 'absolute'),
+				A2($elm$html$Html$Attributes$style, 'left', '40px'),
+				A2($elm$html$Html$Attributes$style, 'top', '40px'),
+				A2($elm$html$Html$Attributes$style, 'font-size', '28px'),
+				A2($elm$html$Html$Attributes$style, 'font-weight', '500'),
+				A2($elm$html$Html$Attributes$style, 'font-family', 'Roboto'),
+				$elm$html$Html$Attributes$class('textlove'),
+				$elm$html$Html$Attributes$classList(
+				_List_fromArray(
+					[
+						_Utils_Tuple2('fadein', fadeIn)
+					]))
+			]),
+		_List_fromArray(
+			[
+				$elm$html$Html$text('Love You, mein Schatz!')
+			]));
+};
 var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$core$String$fromFloat = _String_fromNumber;
 var $elm$html$Html$Attributes$height = function (n) {
@@ -6430,6 +6453,7 @@ var $author$project$Main$view = function (model) {
 			]),
 		_List_fromArray(
 			[
+				$author$project$Main$textLove(model.showTextLove),
 				$author$project$Main$heart(model.showHeart),
 				model.hideConfetti ? A2($elm$html$Html$div, _List_Nil, _List_Nil) : $author$project$Confetti$view(model.confettiModel),
 				A2(
