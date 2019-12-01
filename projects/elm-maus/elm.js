@@ -5450,7 +5450,6 @@ var $author$project$Main$subscriptions = function (model) {
 				$author$project$Confetti$subscriptions(model.confettiModel))
 			]));
 };
-var $elm$core$Debug$log = _Debug_log;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Confetti$BurstAtMouse = {$: 'BurstAtMouse'};
 var $BrianHicks$elm_particle$Particle$System$burst = F2(
@@ -6105,11 +6104,8 @@ var $author$project$Main$update = F2(
 						model,
 						{expand: model.expand + 1}),
 					$elm$core$Platform$Cmd$none);
-			case 'OnClick':
-				return A2(
-					$elm$core$Debug$log,
-					'restart',
-					$author$project$Main$init(_Utils_Tuple0));
+			case 'OnClickRestartScene':
+				return $author$project$Main$init(_Utils_Tuple0);
 			default:
 				return _Utils_Tuple2(
 					_Utils_update(
@@ -6128,7 +6124,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
-var $author$project$Main$OnClick = {$: 'OnClick'};
+var $author$project$Main$OnClickRestartScene = {$: 'OnClickRestartScene'};
 var $elm$core$List$filter = F2(
 	function (isGood, list) {
 		return A3(
@@ -6186,7 +6182,7 @@ var $author$project$Main$heart = function (fadeIn) {
 					[
 						_Utils_Tuple2('fadein', fadeIn)
 					])),
-				$elm$html$Html$Events$onClick($author$project$Main$OnClick)
+				$elm$html$Html$Events$onClick($author$project$Main$OnClickRestartScene)
 			]),
 		_List_fromArray(
 			[
