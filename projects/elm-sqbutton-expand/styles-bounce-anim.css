@@ -1,0 +1,156 @@
+.demo-houter {
+  animation-name: demo-easeOutElasticX;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  width: 150px;
+}
+
+.demo-vinner {
+  content: '';
+  display: block;
+  animation-name: demo-easeOutElasticY;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  height: 550px;
+}
+
+.demo-houter-expand {
+  position: absolute;
+  top: 550px;
+}
+
+.demo-vinner-expand {
+  width: 150px;
+  animation-name: demo-toleft-bottom;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.box-expanded {
+  position: absolute;
+  background: linear-gradient(120deg, #ff9966 0%, #ff6666 100%);
+  border-radius: 12px;
+  top: 550px;
+  left: 2px;
+  height: 80px;
+  animation-name: demo-box-expand;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  transition: width 2s;
+}
+
+@keyframes demo-box-expand {
+  0% {
+    width: 80px;
+  }
+  90% {
+    width: 350px;
+  }
+  100% {
+    width: 370px;
+  }
+}
+
+@keyframes demo-toleft-bottom {
+  100% {
+    transform: translateX(0%);
+  }
+
+  80% {
+    transform: translateX(86.88%);
+  }
+
+  71% {
+    transform: translateX(104.63%);
+  }
+
+  58% {
+    transform: translateX(98.36%);
+  }
+
+  28% {
+    transform: translateX(100.58%);
+  }
+
+  16% {
+    transform: translateX(99.8%);
+  }
+
+  0% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes demo-easeOutElasticX {
+	0% {
+		transform: translateX(0%);
+	}
+
+	16% {
+		transform: translateX(112.27%);
+	}
+
+	28% {
+		transform: translateX(86.88%);
+	}
+
+	58% {
+		transform: translateX(104.63%);
+	}
+
+	71% {
+		transform: translateX(98.36%);
+	}
+
+	80% {
+		transform: translateX(100.58%);
+	}
+
+	95% {
+		transform: translateX(99.8%);
+	}
+
+	100% {
+		transform: translateX(100%);
+	}
+
+}
+
+
+
+@keyframes demo-easeOutElasticY {
+	0% {
+		transform: translateY(0%);
+	}
+
+	16% {
+		transform: translateY(112.27%);
+	}
+
+	28% {
+		transform: translateY(86.88%);
+	}
+
+	44% {
+		transform: translateY(104.63%);
+	}
+
+	59% {
+		transform: translateY(98.36%);
+	}
+
+	73% {
+		transform: translateY(100.58%);
+	}
+
+	88% {
+		transform: translateY(99.8%);
+	}
+
+	100% {
+		transform: translateY(100%);
+	}
+
+}
